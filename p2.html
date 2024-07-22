@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .tree1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('tree.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .tree2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('tree2.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .girl-bicycling {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30%;
+            max-height: 80%;
+            z-index: 0;
+            animation: girl-bicycle-move 10s linear infinite;
+        }
+
+        @keyframes girl-bicycle-move {
+            0% {
+                transform: translateX(0%);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(200%);
+            }
+        }
+
+        .leaves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .leaves img {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            animation: leaf-fall 6s linear infinite;
+        }
+
+        .leaf1 { top: -10%; left: 5%; }
+        .leaf2 { top: -10%; left: 20%; }
+        .leaf3 { top: -10%; left: 35%; }
+        .leaf4 { top: -10%; left: 50%; }
+        .leaf5 { top: -10%; left: 65%; }
+        .leaf6 { top: -10%; left: 80%; }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-form {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-form h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .login-form button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+.background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1; /* Push it to the background */
+        }
+
+        .trees {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Ensure it's behind the form */
+        }
+
+        .trees img {
+            width: 100%; /* Make the tree cover the background */
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .login-form a {
+            text-decoration: none;
+            color: #337ab7;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-form a:hover {
+            color: #23527c;
+        }
+
+        @keyframes leaf-fall {
+            0% {
+                transform: translateY(-10vh) rotateZ(0deg) scale(1);
+            }
+            50% {
+                transform: translateY(100vh) rotateZ(360deg) scale(0.8);
+            }
+            100% {
+                transform: translateY(200vh) rotateZ(720deg) scale(0.6);
+            }
+        }
+            .additional-image {
+            position: absolute; /* Position the new image absolutely */
+            top: 0;
+            left: 0;
+            width: 100%; /* Adjust size as needed */
+            height: 100%; /* Adjust size as needed */
+            z-index: -3; /* Ensure it's behind the trees */
+        }
+
+        .additional-image img {
+            width: 100%; /* Make sure the image covers its container */
+            height: 100%; /* Make sure the image covers its container */
+            object-fit: cover; /* Ensure the image covers the container */
+        }
+
+    </style>
+</head>
+<body>
+<div class="background">
+        <div class="trees">
+            <img src="tree1.png" alt="Tree 1">
+	    <img src="tree2.png" alt="Tree 2">
+        </div>
+        <div class="leaves">
+            <img src="leaf_01.png" alt="Leaf 1">
+            <img src="leaf_02.png" alt="Leaf 2">
+            <img src="leaf_03.png" alt="Leaf 3">
+        </div>
+    </div>
+</div>
+
+    <div class="background">
+        <div class="tree1"></div>
+        <div class="tree2"></div>
+        <img class="girl-bicycling" src="girl.png" alt="Girl Bicycling">
+        <div class="leaves">
+            <img class="leaf1" src="leaf_01.png" alt="Leaf 1">
+            <img class="leaf2" src="leaf_02.png" alt="Leaf 2">
+            <img class="leaf3" src="leaf_03.png" alt="Leaf 3">
+            <img class="leaf4" src="leaf_01.png" alt="Leaf 4">
+            <img class="leaf5" src="leaf_02.png" alt="Leaf 5">
+            <img class="leaf6" src="leaf_03.png" alt="Leaf 6">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form>
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button id="signin">Sign In</button>
+                <a href="#" id="forgot-password">Forget Password</a>
+                <a href="#" id="signup">Sign Up</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners to the buttons
+        document.getElementById('signin').addEventListener('click', function() {
+            // Handle sign in functionality
+            console.log('Sign in button clicked');
+        });
+
+        document.getElementById('forgot-password').addEventListener('click', function() {
+            // Handle forgot password functionality
+            console.log('Forgot password link clicked');
+        });
+
+        document.getElementById('signup').addEventListener('click', function() {
+            // Handle sign up functionality
+            console.log('Sign up link clicked');
+        });
+    </script>
+</body>
+</html>

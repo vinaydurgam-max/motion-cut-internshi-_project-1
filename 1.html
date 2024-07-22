@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Bar with Dropdown</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body {
+			background-color: #ADD8E6; /* light blue background */
+		}
+		
+		.search-container {
+		  max-width: 800px;
+		  margin: 40px auto;
+		  padding: 20px;
+		  background-color: #f9f9f9;
+		  border: 1px solid #ddd;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		.search-bar {
+		  display: flex;
+		  align-items: center;
+		  padding: 10px;
+		  background-color: #fff;
+		  border: 1px solid #ccc;
+		  border-radius: 5px;
+		}
+		
+		.dropdown {
+		  position: relative;
+		  margin-right: 10px;
+		}
+		
+		.dropdown-btn {
+		  background-color: #fff;
+		  border: none;
+		  padding: 10px 20px;
+		  font-size: 16px;
+		  cursor: pointer;
+		}
+		
+		.dropdown-btn:hover {
+		  background-color: #f1f1f1;
+		}
+		
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #fff;
+		  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		  z-index: 1;
+		  width: 150px;
+		  padding: 10px;
+		}
+		
+		.dropdown-content a {
+		  color: #9a0383;
+		  padding: 10px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		
+		.dropdown-content a:hover {
+		  background-color: #f1f1f1;
+		}
+		
+		.dropdown:hover.dropdown-content {
+		  display: block;
+		}
+		
+		.search-input {
+		  width: 70%;
+		  padding: 10px;
+		  font-size: 16px;
+		  border: 1px solid #ccc;
+		}
+		
+		.search-button {
+		  background-color: #4CAF50;
+		  color: #fff;
+		  border: none;
+		  padding: 10px 20px;
+		  font-size: 16px;
+		  cursor: pointer;
+		}
+		
+		.search-button:hover {
+		  background-color: #3e8e41;
+		}
+		
+		.search-icon {
+		  font-size: 16px;
+		  margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="search-container">
+		<div class="search-bar">
+			<div class="dropdown">
+				<button class="dropdown-btn">Everything</button>
+				<div class="dropdown-content">
+					<a href="#">Everything</a>
+					<a href="#">Software development</a>
+					<a href="#">Web development</a>
+					<a href="#">Data Analyst</a>
+					<a href="#">IT Consultant</a>
+					<a href="#">Network administrator</a>
+				</div>
+			</div>
+			<input type="text" class="search-input" placeholder="Search Anything" id="search-input">
+			<button class="search-button" id="search-button">
+				<i class="fa fa-search search-icon"></i>
+			</button>
+		</div>
+	</div>
+	
+	<script>
+		// Add event listener to search button
+		document.getElementById("search-button").addEventListener("click", function() {
+			var searchInput = document.getElementById("search-input").value;
+			alert("You searched for: " + searchInput);
+		});
+	</script>
+</body>
+</html>
